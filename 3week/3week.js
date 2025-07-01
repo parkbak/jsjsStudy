@@ -101,6 +101,28 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     document.getElementById("btn11").addEventListener('click', function() {
+        let arr = [
+            ['a', null],
+            [1, undefined],
+            [NaN, true],
+            ['', 0]
+        ]
+        console.log(arr);
+    });
+
+    document.getElementById("btn12").addEventListener('click', function() {
+        const arr = [];
+        for (let i = 0; i <5; i++) {
+            const arr2 = [];
+            for (let j = 0; j <4; j++) {
+                arr2.push(1);
+            }
+            arr.push(arr2);
+        }
+        console.log(arr);
+    });
+
+    document.getElementById("btn13").addEventListener('click', function() {
         let x = 2;
         let y = 3;
         let z = 4;
@@ -114,5 +136,23 @@ document.addEventListener("DOMContentLoaded", function() {
         }
             `);
         console.log(multiply(x, y, z));
+    });
+
+    document.getElementById("btn14").addEventListener('click', function() {
+        console.log("first: 3 + (b*c)");
+        console.log("second: 3 + (4*c)");
+        console.log("third: 3 + (4*5)");
+    });
+
+    document.getElementById("btn15").addEventListener('click', function() {
+        console.log("first: 3 + (b*c)");
+        console.log("second: 3 + (4*c)");
+        console.log("third: 3 + (4*5)");
+    });
+
+    document.getElementById("btn16").addEventListener('click', function() {
+        console.log("first: 3 + (b*c)");
+        console.log("second: 3 + (4*c)");
+        console.log("third: 3 + (4*5)");
     });
 });

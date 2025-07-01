@@ -1,3 +1,8 @@
+let rdList = []; //랜덤 list
+let list = []; //입력 list
+let result; //결과 string
+let resultList = []; //결과 string 담는 list
+
 //랜덤 숫자 3개 뽑는 함수
 function randomNum(min, max) {
     let randomList = [];
@@ -7,10 +12,6 @@ function randomNum(min, max) {
     }
     return randomList;
 }
-let rdList = [];
-let list = []; 
-let result; 
-let resultList = [];
 
 //사용자한테 숫자 3개 입력 받는 함수
 function inputNumber(turn) {
@@ -21,7 +22,7 @@ function inputNumber(turn) {
         while (true) { //제대로된 형태로 입력될 때까지 반복
             let text = prompt(`${turn+1}번째 시도: ${i}번째 숫자를 입력하세요. (0~9)`);
             if (pattern.test(text) && text.length === 1) {
-                const number = parseInt(text); //입력값 숫자로 형 변환
+                const number = parseInt(text); //입력값 숫자로 형 변환(단순변수는 let이 좋다)
                 list.push(number); //배열에 추가
                 break; // 입력 제대로 되면 탈출
             } else {
@@ -31,11 +32,11 @@ function inputNumber(turn) {
     }
     result = list.join(', '); //리스트에 담긴 걸 string 형태로 합침
     resultList.push(result); //스트링을 다른 list에 담음
-    return compareNumber(); //true/false 값을 return함
+    return compareNumber(turn); //true/false 값을 return함
 }
 
 //입력 받은 숫자랑 랜덤 숫자 비교하는 함수
-function compareNumber() {
+function compareNumber(turn) {
     let strike=0;
     let ball=0;
     for(let i=0; i<3; i++) {
@@ -53,7 +54,7 @@ function compareNumber() {
     } else {
         const msg = `판정 -- ${strike} 스트라이크 , ${ball} 볼`;
         console.log(msg);
-        if(num === 9) {
+        if(turn === 9) {
             return "false"; //마지막까지 못 맞췄을 때 false 반환
         } else {
             return "pass"; //pass 반환
@@ -70,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
     //버튼 클릭했을 때 실행
     document.getElementById("btn").addEventListener('click', function() {
         for (let turn=0; turn<10; turn++) { //10번 반복
-            const status = inputNumber(turn); //success. false, pass중 하나
+            const status = inputNumber(turn); //success, false, pass중 하나
             resultMap[`${turn+1}차 입력`] = resultList[turn]; //map에 추가
                 // 성공 조건일 때 resultMap 출력
             if (status === "success") {
@@ -88,3 +89,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+
+// 1. 공통 숙제
+// 2. class 179p~188p 발제 준비 (박소정)
