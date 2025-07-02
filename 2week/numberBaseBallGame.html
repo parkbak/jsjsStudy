@@ -4,9 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>숫자 야구 게임</title>
+    <style>
+        table {
+            width: 500px;
+            height: auto;
+        }
+        textarea {
+            height: 400px;
+            width: 500px;
+        }
+        input {
+            width: 200px;
+        }
+        caption {
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
-    <button id="btn">게임 시작</button>
+    <p>숫자 야구 게임 - 4단계</p>
+    <br/>
+    <table>
+        <caption>숫자 야구 게임</caption>
+        <tr>
+            <td>유저이름</td>
+            <td>
+                <input type="text" id="userName" />
+            </td>
+        </tr>
+        <tr>
+            <td>생성숫자</td>
+            <td>
+                <input type="text" id="randomNum" />
+            </td>
+        </tr>
+        <tr>
+            <td>입력한 숫자</td>
+            <td> 
+                                            <!-- oninput은 값이 바뀔 때마다 발생하는 이벤트 -->
+                                            <!-- (onchange는 값 변경되고 포커스 잃어야 발생함) -->
+                <input type="text" id="inputNum" oninput="onlyNumAndComma(this);" />
+            </td>
+        </tr>
+        <tr>
+            <td>게임 결과</td>
+            <td>
+                <p id="gameResultText"></p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <textarea name="" id="textArea" readonly></textarea>
+            </td>
+        </tr>
+    </table>
     <script src="numberBaseBallGame.js"></script>
 </body>
 </html>
