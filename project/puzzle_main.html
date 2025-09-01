@@ -8,9 +8,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
+    <!-- 사운드 효과 -->
+    <audio id="snapSound" preload="auto">
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIG2m98OScTgwOUarm7blmGgU7k9n1unEiBC13yO/eizEIHWq+8+OWT" type="audio/wav">
+    </audio>
+    
     <div class="container">
         <div class="title">
             <span>직소 퍼즐 맞추기 게임</span>
+        </div>
+        
+        <!-- 타이머 영역 추가 -->
+        <div class="timer-container" id="timerContainer" style="display: none;">
+            <div class="timer">
+                <span class="timer-label">경과 시간:</span>
+                <span class="timer-display" id="timerDisplay">00:00</span>
+            </div>
         </div>
         
         <div class="upload-area" id="uploadArea">
@@ -33,8 +46,19 @@
                 <span>게임 시작</span>
             </button>
         </div>
+        
+        <!-- 게임 중 버튼 컨테이너 -->
+        <div class="game-button-container" id="gameButtonContainer" style="display: none;">
+            <button class="puzzle-btn hint-btn" id="hintBtn">
+                <span>💡 힌트 보기</span>
+            </button>
+            <button class="puzzle-btn check-btn" id="checkBtn">
+                <span>✅ 결과 확인</span>
+            </button>
+        </div>
     </div>
 
-    <script src="puzzle.js"></script>
+     <script src="puzzle.js"></script>
+     <script src="records.js"></script>
 </body>
 </html>
