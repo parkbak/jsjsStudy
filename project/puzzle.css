@@ -1,17 +1,85 @@
 /* reset.css */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
     margin: 0;
     padding: 0;
     border: 0;
@@ -19,26 +87,45 @@ time, mark, audio, video {
     font: inherit;
     vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
     display: block;
 }
+
 body {
     line-height: 1;
     font-family: 'Arial', sans-serif;
 }
-ol, ul {
+
+ol,
+ul {
     list-style: none;
 }
-blockquote, q {
+
+blockquote,
+q {
     quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
     content: '';
     content: none;
 }
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -63,19 +150,15 @@ table {
 
 /* 타이머 스타일 */
 .timer-container {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     padding: 15px 30px;
     border-radius: 25px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    margin-bottom: 20px;
-    animation: slideDown 0.5s ease;
 }
 
 .timer {
     display: flex;
     align-items: center;
     gap: 10px;
-    color: white;
+    color: black;
     font-weight: bold;
 }
 
@@ -84,12 +167,9 @@ table {
 }
 
 .timer-display {
-    font-size: 24px;
-    font-family: 'Courier New', monospace;
-    background: rgba(255,255,255,0.2);
-    padding: 5px 12px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 8px;
-    min-width: 80px;
     text-align: center;
 }
 
@@ -98,6 +178,7 @@ table {
         transform: translateY(-20px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
@@ -140,9 +221,9 @@ table {
     border-radius: 10px;
     background-color: #f8f9fa;
     position: relative;
-    margin: 20px 0;
+    margin: 0 0 20px 0;
     overflow: visible;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 /* 퍼즐 조각 스타일 */
@@ -176,15 +257,19 @@ table {
     0% {
         transform: scale(1.2) rotate(5deg);
     }
+
     25% {
         transform: scale(0.95) rotate(-3deg);
     }
+
     50% {
         transform: scale(1.1) rotate(2deg);
     }
+
     75% {
         transform: scale(0.98) rotate(-1deg);
     }
+
     100% {
         transform: scale(1) rotate(0deg);
     }
@@ -194,7 +279,7 @@ table {
 .puzzle-piece.dragging {
     opacity: 0.8;
     transform: rotate(2deg);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
 /* 게임 완료 오버레이 스타일 */
@@ -241,7 +326,6 @@ table {
 }
 
 .completion-time strong {
-    color: #28a745;
     font-size: 24px;
 }
 
@@ -264,7 +348,7 @@ table {
     align-items: center;
     padding: 12px 12px;
     margin: 8px 0;
-    background: #f8f9fa;
+    background: #efefef;
     border-radius: 8px;
     transition: all 0.3s ease;
 }
@@ -275,15 +359,12 @@ table {
 
 .rank {
     font-weight: bold;
-    color: #18c3e1;
     min-width: 40px;
 }
 
 .time {
     font-size: 18px;
     font-weight: bold;
-    color: #28a745;
-    font-family: 'Courier New', monospace;
 }
 
 .nickname {
@@ -360,7 +441,9 @@ table {
 .full-image:hover {
     transform: scale(1.02);
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
-}.restart-btn {
+}
+
+.restart-btn {
     padding: 12px 30px;
     background-color: #18c3e1;
     color: white;
@@ -381,6 +464,7 @@ table {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -391,6 +475,7 @@ table {
         transform: translateY(-50px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
@@ -409,6 +494,7 @@ table {
     max-width: 100%;
     height: auto;
 }
+
 /* 버튼 컨테이너 스타일 */
 .button-container {
     display: flex;
@@ -615,5 +701,3 @@ table {
     color: #666;
     margin-bottom: 20px;
 }
-
-
